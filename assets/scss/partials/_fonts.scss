@@ -1,0 +1,13 @@
+////
+// Fonts
+////
+
+
+// DIN
+@include font-face('Gotham', '../fonts/GothamRounded-Light', 300, normal);
+@include font-face('Gotham', '../fonts/GothamRounded-LightItalic', 300, italic);
+@include font-face('Gotham', '../fonts/GothamRounded-Book', 400, normal);
+@include font-face('Gotham', '../fonts/GothamRounded-BookItalic', 400, italic);
+@include font-face('Gotham', '../fonts/GothamRounded-Medium', 500, normal);
+@include font-face('Gotham', '../fonts/GothamRounded-MediumItalic', 500, italic);
+@include font-face('Gotham', '../fonts/GothamRounded-Bold', 700, normal);

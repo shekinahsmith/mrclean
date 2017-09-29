@@ -1,0 +1,50 @@
+
+// Heroes 
+.hero {
+    background-color: $color-daisy-bush; // placeholder while coding
+    color: $color-white; 
+    padding: 66px 0;
+    position: relative;
+
+    // hero headline
+    &__headline {
+        font-weight: 500;
+        left: 0;
+        position: absolute;
+        top: (50%);
+        transform: translateY(-50%);
+    }
+
+    // hero contact wrapper
+    &__contact-wrapper {
+        margin: 0 auto;
+        width: 65%;
+    }
+
+    // hero contact healdine
+    &__contact-headline {
+        font-size: rem-calc(18);
+        font-weight: 500;
+        margin-bottom: 18px;
+    }
+
+    // hero contact cta
+    &__contact-cta {
+        font-size: 12px;
+        margin-bottom: 30px;
+    }
+}// .hero
+
+// hero landing
+.hero--landing {
+
+    // hero headline
+    .hero__headline {
+        font-size: 38px;
+
+        .h-text-large {
+            font-size: 48px;
+        }
+    }
+}// .hero--landing
+

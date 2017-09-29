@@ -1,6 +1,18 @@
-@import "globals/reset";
-@import "globals/variables";
+@import 'partials/mixins-custom';
 
 //Zurb Foundation components
 @import "vendors/foundation/settings";
 @import "vendors/foundation";
+
+@import "globals/reset";
+@import "globals/variables";
+@import "partials/fonts";
+@import "partials/helpers";
+
+
+@import "partials/base" ;
+@import "partials/masthead" ;
+@import "partials/heroes";
+@import "partials/forms";
+@import "partials/sections";
+@import "partials/footer";

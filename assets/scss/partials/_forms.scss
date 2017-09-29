@@ -1,0 +1,50 @@
+// Forms 
+.form {
+    input, 
+    select,
+    button {
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    input,
+    select {
+        font-size: rem-calc(12);
+        height: 27px;
+        padding: 0;
+    }
+
+    button {
+        background-color: $color-malibu;
+        padding: 12px 5px;
+        width: 50%;
+    }
+}// .form
+
+// contact form 
+.form--contact {
+    input,
+    select {
+        display: inline-block;
+    }
+
+    input[name='firstName'],
+    input[name='lastName'],
+    input[name='city'],
+    input[name='phone'],
+    input[name='email'] {
+        width: 48%;
+    }
+
+    select {
+        width: 20%;
+    }
+
+    input[name='zip'] {
+        width: 28%;
+    }
+
+    button {
+        margin: 30px 0 18px;
+    }
+}// .form--contact 

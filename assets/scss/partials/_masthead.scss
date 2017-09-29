@@ -1,0 +1,22 @@
+// Masthead
+.masthead {
+    padding: 42px 0;
+
+    // masthead navigation
+    &__navigation {
+        text-align: center;
+
+        &-item {
+            display: inline-block;
+            font-size: rem-clac(15);
+            width: 24%;
+            vertical-align: middle;
+        }
+    }// .masthead__navigation
+
+    // masthead employee login
+    &__login {
+       color: $color-cornflower-blue;
+       font-size: $base-font-size; 
+    }
+}// .masthead

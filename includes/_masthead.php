@@ -18,7 +18,7 @@
         </div><!-- /.columns -->
 
         <div class="columns large-2">
-            <div class="masthad__login">Employee Login</div>
+            <div class="masthead__login">Employee Login</div>
         </div><!-- /.columns -->
 
     </div><!-- /.row -->

@@ -1,5 +1,6 @@
 // Foundation
 //=include "vendors/foundation/foundation.js"
+//=include "vendors/foundation/foundation.equalizer.js"
 
 
 //=include "plugins/fastclick.js"

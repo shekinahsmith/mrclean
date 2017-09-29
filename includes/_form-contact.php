@@ -1,9 +1,8 @@
 <form class="form form--contact js-form--contact">
 
-    <input type="text" id="first-name" name="firstName" placeholder="First Name">
-    <input type="text" id="last-name" name="lastName" placeholder="Last Name">
-    <input type="text" id="city" name="city" placeholder="City">
-    <input type="text" id="city" name="city" placeholder="City">
+    <input type="text" id="first-name" name="firstName" placeholder="First Name" required>
+    <input type="text" id="last-name" name="lastName" placeholder="Last Name" required>
+    <input type="text" id="city" name="city" placeholder="City" required>
 
     <select>
         <option value="" disabled selected>State</option>
@@ -60,10 +59,12 @@
         <option value="WY">Wyoming</option>
     </select>
 
-    <input type="text" id="zip" name="zip" pattern="d{5}-?(\d{4})" placeholder="Zip">
-    <input type="tel" id="phone" name="phone" pattern="(\+0?1\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}">
+    <input type="text" id="zip" name="zip" pattern="d{5}-?(\d{4})" placeholder="Zip" required>
+
+    <input type="tel" id="phone" name="phone" pattern="(\+0?1\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}" placeholder="Phone Number (required)" required>
+
     <input type="email" id="email" name="email" pattern="[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}
-  [a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*">
+  [a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*" placeholder="Email" required>
     
     <div class="form__submit">
         <button class="form__submit" type="button">Send</button>
