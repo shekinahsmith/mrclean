@@ -1,7 +1,7 @@
 	<footer class="footer">
 
         <div class="row">
-            <div class="columns large-7 small-12">
+            <div class="columns small-12 large-7 small-12">
 
                 <ul class="footer__navigation">
 
@@ -14,7 +14,7 @@
 
             </div><!-- /.columns -->
 
-            <div class="columns large-5 small-12">
+            <div class="columns small-12 large-5 small-12">
 
                 <div class="footer__social">Find us on Social Media:</div>
 

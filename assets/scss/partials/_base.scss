@@ -10,21 +10,26 @@
 	@include box-sizing(border-box);
 }
 
+html,
+body {
+	height: 100%;
+}
+
 
 // base defaults
 body {
 	background-color: $color-white;
-    color: $base-body-color;
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-	line-height: 1.2;
+	color: $base-body-color;
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	line-height: 1.75;
 	margin: 0 auto;
 	-moz-osx-font-smoothing: grayscale;
-	 -webkit-font-smoothing: antialiased;
-	 
+	-webkit-font-smoothing: antialiased;
+	position: relative;
 	// xlarge desktop
 	@media #{$xlarge-up} {
-		font-size: 16px;
+		font-size: 14px;
 	}
 	
 } // body
@@ -50,10 +55,14 @@ a {
 
 	#{$header} {
         color: inherit;
-		font-size: $font-size; 
+		font-size: $font-size/1.7; 
 		font-weight: 500;
 		line-height: 1;
 		margin-bottom: 18px;
+
+		@media #{$large-up} {
+			font-size: $font-size;
+		}
 		
 	} // $header
 	
@@ -97,4 +106,27 @@ sup {
 
 .legal {
     font-size: rem-calc(10);
+}
+
+// image row
+.image-row {
+	text-align: center;
+
+	&__image {
+		display: inline-block;
+
+		&:last-child {
+			margin-right: 0;
+		}
+		
+	}// .image-row__image
+
+	// three up
+	&--three-up {
+
+		.image-row__image {
+			margin-right: 37px;
+			width: 28%;
+		}
+	}
 }

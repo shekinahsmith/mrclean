@@ -2,18 +2,42 @@
 .footer {
     background-color: $color-mine-shaft;
     color: $color-white;
+    font-size: 10px;
     padding: 33px 0;
+    text-align: center;
+
+    @media #{$large-up} {
+        font-size: 12px;
+    }
 
     &__navigation {
+        display: table;
+        margin: auto;
         text-align: center;
 
+        @media #{$large-up} {
+            display: block;
+            margin: 0;
+        }
+
         &-item {
-            display: inline-block;
-            width: 24%;
+            display: table-cell;
+            padding: 0 10px;
+
+            @media #{$large-up} {
+                display: inline-block;
+                padding: 0;
+                width: 24%;
+            }
         }
     }
 
     &__social {
         font-size: rem-calc(13);
+        margin-top: 15px;
+
+        @media #{$large-up} {
+            margin-top: 0;
+        }
     }
 }

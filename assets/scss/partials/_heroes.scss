@@ -2,18 +2,49 @@
 // Heroes 
 .hero {
     background-color: $color-daisy-bush; // placeholder while coding
+    background-size: cover;
+    background-position: center;
     color: $color-white; 
-    padding: 66px 0;
+    padding: 75px 15px 49px;
     position: relative;
+    text-align: center;
+
+    @media #{$large-up} {
+        padding: 66px 0;
+        text-align: left;
+    }
+
+    // removing border on mobile screens
+    .has-border-right {
+
+        @media #{$medium-down} {
+            border: none;
+        }
+    }
+
+    &__image {
+        margin-bottom: 28px;
+    }
 
     // hero headline
     &__headline {
         font-weight: 500;
-        left: 0;
-        position: absolute;
-        top: (50%);
-        transform: translateY(-50%);
-    }
+        left: auto;
+        position: relative;;
+        top: auto;
+        text-align: center;
+        transform: none;
+        width: auto;
+
+        @media #{$large-up} {
+            left: 0;
+            position: absolute;
+            top: (50%);
+            text-align: left;
+            transform: translateY(-50%);
+            width: 90%;
+        }
+    }//.hero__headline
 
     // hero contact wrapper
     &__contact-wrapper {
@@ -35,16 +66,59 @@
     }
 }// .hero
 
+// interior page heroes
+.hero--interior {
+    // hero headline
+    .hero__headline {
+
+        @media #{$large-up} {
+            width: 80%;
+        }
+    }
+
+}// .hero--interior
+
 // hero landing
 .hero--landing {
+    background-image: url('/assets/images/bg-hero-landing-mobile.jpg');
+
+    @media #{$large-up} {
+        background-image: url('/assets/images/bg-hero-landing.jpg');
+    }
 
     // hero headline
     .hero__headline {
-        font-size: 38px;
+        font-size: 10px;
+        
+        @media #{$large-up} {
+            font-size: 38px;
+        }
 
         .h-text-large {
-            font-size: 48px;
+            font-size: 30px;
+
+            @media #{$large-up} {
+                font-size: 48px;
+            }
         }
     }
 }// .hero--landing
 
+
+// hero about us
+.hero--about-us {
+    background-image: url('/assets/images/bg-hero-about-us-mobile.jpg');
+
+    @media #{$large-up} {
+        background-image: url('/assets/images/bg-hero-about-us.jpg');
+    }
+}
+
+// hero clients
+.hero--clients {
+    background-image: url('/assets/images/bg-hero-clients-mobile.jpg');
+
+    @media #{$large-up} {
+        background-image: url('/assets/images/bg-hero-clients.jpg');
+    }
+}

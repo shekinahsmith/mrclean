@@ -1,12 +1,109 @@
 // Section
 .section {
-    padding: 55px 0;
+    border: 1px solid $color-concrete;
+    padding: 55px 15px;
+
+    // section image
+    &__image {
+        margin: 0 auto 16px;
+        width: 212px;
+
+        @media #{$large-up} {
+            margin: 0;
+            width: auto;
+        }
+    }
+
+    &__image-caption {
+        font-size: rem-calc(12);
+        font-style: italic;
+        text-align: center;
+
+        @media #{$large-up} {
+            font-size: rem-calc(16);
+        }
+    }
+
+    &__image-carousel {
+        width: 100%;
+
+        &-slide {
+            margin-bottom: 0;
+
+            @media #{$large-up} {
+                margin-bottom: 28px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}// .section
+
+.section--dark {
+    background-color: $color-black;
 }
 
+// section intro
 .section--intro {
 
+    // section cta
     .section__cta {
         margin: 0 auto;
-        width: 80%;
+        width: 100%;
+
+        @media #{$large-up} {
+            width: 70%;
+        }
+    }// .section__cta
+
+    .section__image {
+        @media #{$large-up} {
+            margin-top: 80px;
+        }
     }
-}
+
+}// .section--intro
+
+
+// section why choose us
+.section--why-choose-us {
+
+    // section image
+    .section__image {
+        margin-bottom: 30px;
+
+        @media #{$large-up} {
+            margin-bottom: 18px;
+        }
+    }
+
+}// .section--why-choose-us
+
+
+// section client list
+.section--client-list {
+
+    // .section headline
+    .section__headline {
+        color: $color-white;
+        font-size: 28px;
+        font-weight: 300;
+        margin-bottom: 60px;
+        text-align: center;
+
+        @media #{$large-up} {
+            font-size: 48px;
+        }
+    }
+
+    .section__image {
+        text-align: center;
+        width: auto;
+    }
+}// .section--client-list

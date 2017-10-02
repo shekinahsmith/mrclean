@@ -17,3 +17,11 @@
 .has-border-right {
     border-right: 1px solid $color-white;
 }
+
+.h-headline-margin { 
+    margin-top: 60px;
+
+    @media #{$large-up} {
+        margin-top: 70px;
+    }
+}

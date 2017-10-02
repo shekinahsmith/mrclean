@@ -1,14 +1,33 @@
 // Masthead
 .masthead {
-    padding: 42px 0;
+    $mastheadHeight: 70px;
+    background-color: $color-white;
+    height: $mastheadHeight;
+    padding: 12px 0;
+
+    @media #{$large-up} {
+        height: auto;
+    }
+
+    &__logo {
+        height: auto;
+        width: auto;
+
+        @media #{$large-up} {
+            height: 75px;
+            width: 75px;
+        }
+
+    }
 
     // masthead navigation
     &__navigation {
+        padding: 20px 0;
         text-align: center;
 
         &-item {
             display: inline-block;
-            font-size: rem-clac(15);
+            font-size: rem-calc(15);
             width: 24%;
             vertical-align: middle;
         }
@@ -18,5 +37,48 @@
     &__login {
        color: $color-cornflower-blue;
        font-size: $base-font-size; 
+       
+        @media #{$large-up} {
+            padding: 25px 0;
+        }
+    }
+
+    // mobile navigation toggle
+    &__mobile-menu-toggle {
+        font-size: rem-calc(13);
+        padding: 12px 0;
+        text-align: right;
+        text-transform: uppercase;
+
+        span {
+            color: $color-cerulean;
+            display: inline-block;
+            font-weight: 700;
+            vertical-align: middle;
+        }
+    }
+
+
+    // mobile navigation
+    &__mobile-navigation {
+        display: block;
+        background-color: $color-white;
+        height: 100vh;
+        left: -9999px;
+        padding: 0 20px;
+        position: fixed;
+        top: $mastheadHeight;
+        width: 100vw;
+        z-index: 9999;
+
+        &.is-visible {
+            left: 0;
+        }
+        
+        &-item {
+            border-bottom: 1px solid $color-concrete;
+            font-size: 13px;
+            padding: 29px 0 15px;
+        }
     }
 }// .masthead
