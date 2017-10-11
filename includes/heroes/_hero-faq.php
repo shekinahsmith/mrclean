@@ -1,10 +1,10 @@
-<div class="hero hero--interior hero--contact-us">
+<div class="hero hero--interior hero--faq">
     <div class="row" data-equalizer>
         <div class="columns small-12 large-6 has-border-right" data-equalizer-watch>
 
             <div class="hero__image show-for-medium-down"><img src="/assets/images/logo-full-white.png"alt="Mr. Clean Maintainence Company, LLC"></div>
 
-            <h1 class="hero__headline"><span class="h-text-large">Contact Us</h1>
+            <h2 class="hero__headline"><span class="h-text-large">FAQ</h2>
         </div><!-- /.columns -->
 
         <div class="columns large-6 h-text-center show-for-large-up" data-equalizer-watch>
@@ -19,4 +19,4 @@
 
         </div><!-- /.columns -->
     </div><!-- /.row -->
-</div><!-- /.hero--contact-us -->
+</div><!-- /.hero--faq -->

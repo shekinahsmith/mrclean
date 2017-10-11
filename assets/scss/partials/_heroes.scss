@@ -122,3 +122,19 @@
         background-image: url('/assets/images/bg-hero-clients.jpg');
     }
 }
+
+.hero--contact-us {
+    background-image: url('/assets/images/bg-hero-contact-us-mobile.jpg');
+
+    @media #{$large-up} {
+        background-image: url('/assets/images/bg-hero-contact-us.jpg');
+    }
+}
+
+.hero--faq {
+    background-image: url('/assets/images/bg-hero-faq-mobile.jpg');
+
+    @media #{$large-up} {
+        background-image: url('/assets/images/bg-hero-faq.jpg');
+    }
+}

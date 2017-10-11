@@ -36,6 +36,63 @@ $(document).ready(function() {
         ]
     });
 
+    $('.js-section__navigation-slider').slick({
+        arrows: false,
+        dots: true,
+        slidesToShow: 1,
+        infinite: true,
+        responsive: [
+            {
+                breakpoint: 999999,
+                settings: {
+                    dots: false,
+                    infinite: false,
+                    slidesToShow: 4
+                }
+            },
+            {
+                breakpoint: 1023,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
 
+    $('.js-slider--client-descriptions').slick({
+        asNavFor: '.js-slider--client-types',
+        adaptiveHeight: true,
+        arrows: false,
+        fade: true,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    });
+
+    $('.js-slider--client-types').slick({
+        asNavFor: '.js-slider--client-descriptions',
+        arrows: false,
+        centerMode: true,
+        dots: false,
+        focusOnSelect: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: false,
+        responsive: [
+            {
+                breakpoint: 999999,
+                settings: {
+                    slidesToShow: 4
+                }
+            },
+            {
+                breakpoint: 1023,
+                settings: {
+                    slidesToShow: 3,
+                    infinite: true
+                }
+            }
+        ]
+    });
+    
 
 });

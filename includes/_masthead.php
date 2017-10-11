@@ -13,6 +13,7 @@
                 <li class="masthead__navigation-item"><a href="/">Home</a></li>
                 <li class="masthead__navigation-item"><a href="/about-us.html">About Us</a></li>
                 <li class="masthead__navigation-item"><a href="/clients.html">Our clients</a></li>
+                <li class="masthead__navigation-item"><a href="/faq.html">FAQ</a></li>
                 <li class="masthead__navigation-item"><a href="/contact-us.html">Contact us</a></li>
 
             </ul>
@@ -32,6 +33,7 @@
         <li class="masthead__mobile-navigation-item"><a href="/">Home</a></li>
         <li class="masthead__mobile-navigation-item"><a href="/about-us.html">About Us</a></li>
         <li class="masthead__mobile-navigation-item"><a href="/clients.html">Our clients</a></li>
+        <li class="masthead__navigation-item"><a href="/faq.html">FAQ</a></li>
         <li class="masthead__mobile-navigation-item"><a href="/contact-us.html">Contact us</a></li>
         <li class="masthead__mobile-navigation-item masthead__login"><a href="">Employee Login</a></li>
 

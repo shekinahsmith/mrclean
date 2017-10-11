@@ -1,18 +1,30 @@
 // Section
 .section {
-    border: 1px solid $color-concrete;
     padding: 55px 15px;
+
+    // section cta
+    &__cta {
+        margin: 0 auto 20px;
+    }// .section__cta
 
     // section image
     &__image {
-        margin: 0 auto 16px;
+        margin: 0 auto 20px;
         width: 212px;
 
         @media #{$large-up} {
-            margin: 0;
+            margin: 0 0 18px;
             width: auto;
         }
-    }
+
+        // wide image
+        &--wide {
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+    }// .section__image
 
     &__image-caption {
         font-size: rem-calc(12);
@@ -22,7 +34,7 @@
         @media #{$large-up} {
             font-size: rem-calc(16);
         }
-    }
+    }// .section__image-caption
 
     &__image-carousel {
         width: 100%;
@@ -42,51 +54,86 @@
                 width: 100%;
             }
         }
-    }
+    }// .section__image-carousel 
+
 }// .section
 
 .section--dark {
     background-color: $color-black;
 }
 
-// section intro
-.section--intro {
+.section--light {
+    background-color: $color-alabaster;
+}
 
-    // section cta
-    .section__cta {
-        margin: 0 auto;
-        width: 100%;
+// section where image is top on mobile
+.section--image-top {
+    
+    // section headline
+    .section__headline {
+        margin-top: 40px;
 
         @media #{$large-up} {
-            width: 70%;
-        }
-    }// .section__cta
-
-    .section__image {
-        @media #{$large-up} {
-            margin-top: 80px;
+           margin-top: 0;
         }
     }
+}// .section--image-top
 
-}// .section--intro
+// clients we serve
+.section--clients-we-serve {
+
+    // section headline
+    .section__headline {
+        margin: 40px 0 5px;
+    }
+
+    // section navigation
+    .section__navigation {
+        margin-top: 55px;
+
+        &-slide {
+
+            a {
+                display: inline-block;
+                height: 100%;
+                padding-bottom: 30px;
+                position: relative;
+                width: 100%;
+            }
+
+            .slide-image {
+                margin: 0 auto;
+                width: 150px;
+            }
+
+            .slide-header {
+                bottom: 0;
+                left: 0;
+                position: absolute;
+                width: 100%;
+            }
+        }
+    }// .section__navigation
+
+}// .section--clients-we-serve
 
 
-// section why choose us
+// why choose us
 .section--why-choose-us {
 
     // section image
     .section__image {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
 
         @media #{$large-up} {
-            margin-bottom: 18px;
+           margin: 60px 0 18px;
         }
     }
 
 }// .section--why-choose-us
 
 
-// section client list
+// client list
 .section--client-list {
 
     // .section headline
@@ -107,3 +154,43 @@
         width: auto;
     }
 }// .section--client-list
+
+
+// .section client types
+.section--client-types {
+    border-bottom: 1px solid $color-concrete;
+}
+
+.section--faq {
+
+    .section__headline {
+        font-size: $font-size-h2/1.7;
+        font-weight: 400;
+        margin-bottom: 60px;
+
+        @media #{$large-up} {
+            font-size: $font-size-h2;
+        }
+    }
+
+    .list--faq {
+
+        .list-item {
+            display: inline-block;
+            margin-bottom: 20px;
+            width: 100%;
+            vertical-align: top;
+
+            @media #{$large-up} {
+                margin-bottom: 45px;
+                width: 45%;
+            }
+
+            &:nth-of-type(odd) {
+                @media #{$large-up} {
+                    margin-right: 4%;
+                }
+            }
+        }
+    }
+}

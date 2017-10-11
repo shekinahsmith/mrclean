@@ -1,13 +1,15 @@
 // Colors
-$color-nevada: #6D6E71;
-$color-mine-shaft: #353535;
-$color-malibu: #7890FE;
-$color-daisy-bush: #5B2999;
-$color-cornflower-blue: #6287FA;
-$color-concrete: #F2F2F2;
+$color-alabaster: #f9f9f9;
 $color-black: #000;
-$color-white: #fff;
 $color-cerulean: #009FDB;
+$color-concrete: #F2F2F2;
+$color-cornflower-blue: #6287FA;
+$color-daisy-bush: #5B2999;
+$color-malibu: #7890FE;
+$color-mine-shaft: #353535;
+$color-nevada: #6D6E71;
+$color-white: #fff;
+$color-havelock-blue: #4A90E2;
 
 $base-font-size: 12px;
 $base-body-color: $color-nevada;
@@ -15,3 +17,4 @@ $base-font-family:'Gotham', sans-serif;
 
 $font-size-h1: rem-calc(68);
 $font-size-h2: rem-calc(48);
+$font-size-h3: rem-calc(24);
