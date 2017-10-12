@@ -16,7 +16,7 @@
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 
-    $to = "kinahb90@gmail.com";
+    $to = "shekinahc.smith@icloud.com";
     $subject = "Mr. Clean Website Contact Request";
     $headers .= "From: $email\r\n";
     mail($to, $subject, $message, $headers);

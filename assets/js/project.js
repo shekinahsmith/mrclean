@@ -10,7 +10,6 @@
 //=include "plugins/slick.min.js"
 
 
-
 $(document).ready(function() {
     $(document).foundation();
 
@@ -124,109 +123,184 @@ $(document).ready(function() {
         ]
     });
 
-    // contact form submit
-    function formSubmit() {
+    function validateForm(formSelector) {
+        // var form = $('.js-form--contact');
+
+        var form = $(formSelector);
+        var formInputFields = form.find('[required]');
+        var formState = form.find('[name="state"]');
+
+        var desktopCall = 0;
+        var mobileCall = 0;
+
+        // form validation
+        function validate(fields) {
+
+            var valid = true;
+
+            fields.each(function () {
+
+                var fields = $(this);
+
+                if (fields.val() == '' && !fields.is('select')) {
+
+                    fields.addClass('error');
+                    valid = false;
+
+                }
+                else if (fields.val() == '' && fields.is('select')) {
+
+                    $('.form__select-custom').addClass('error');
+                    valid = false;
+                }
+
+            });
+            return valid;
+        }
+
+        validate(formInputFields);
+
+        // if( validate(formInputFields) ) {
+        //     recaptcha.execute(formIndex); 
+        // }
         
-        var form = $('.js-form--contact');
+        if ( formSelector == '.form--contact-desktop' && validate(formInputFields)) {
+            desktopCall ++;
+        }
+        else if (formSelector == '.form--contact-mobile' && validate(formInputFields)) {
+            mobileCall ++;
+        }
 
-        form.on('submit', function(event) {
+        if( formSelector == '.form--contact-desktop' ) {
+            var desktopWidget;
 
-            event.preventDefault();  
-
-
-            var form = $(this);
-            var formInputFields = form.find('[required]');
-            var formFirstName = form.find('[name="firstName"]');
-            var formLastName = form.find('[name="lastName"]');
-            var formCity = form.find('[name="city"]');
-            var formState = form.find('[name="state"]');
-            var formZip = form.find('[name="zip"]');
-            var formPhone = form.find('[name="phone"]');
-            var formEmail = form.find('[name="email"]');
-
-
-            var formInfo = {
-                "firstName": formFirstName.val().toUpperCase(),
-                "lastName": formLastName.val().toUpperCase(),
-                "city": formCity.val().toUpperCase(),
-                "state": formState.val() === 'null' ? '' : formState.val().toUpperCase(),
-                "zip": formZip.val(),
-                "phone": formPhone.val(),
-                "email": formEmail.val().toUpperCase()
-            };
-
-            // form validation
-            function validate(fields) {
-
-                var valid = true;
-
-                fields.each(function() {
-
-                    var fields = $(this);
-
-                    if( fields.val() == '' && !fields.is('select') ) {
-
-                        fields.addClass('error');
-                        valid = false;
-
-                    }
-                    else if( fields.val() == '' && fields.is('select') ) {
-
-                        $('.form__select-custom').addClass('error');
-                    }
-
+            if (desktopCall == 1) {
+                desktopWidget = grecaptcha.render('desktop-captcha', {
+                    'sitekey': '6LeJKDQUAAAAAMnyo48vqCJE8lSXqLm4yphVhWEf',
+                    'callback': desktopCallback,
+                    'size': "invisible"
                 });
-
-                return valid;
-
             }
+            grecaptcha.reset(desktopWidget);
+            grecaptcha.execute(desktopWidget);
+        }
 
-            validate(formInputFields);
+        if (formSelector == '.form--contact-mobile') {
+            var mobileWidget;
 
-            // adding error styling and preventing form from submitting if invalid
-            if (!validate(formInputFields)) {
-
-                formInputFields.each(function () {
-
-                    // on keyup and input field is no longer empty remove error class
-                    $(this).keyup(function () {
-
-                        if ($(this).val() !== '') {
-                            $(this).removeClass('error');
-                        }
-                    });
+            if (mobileCall == 1) {
+                mobileWidget = grecaptcha.render('mobile-captcha', {
+                    'sitekey': '6LeJKDQUAAAAAMnyo48vqCJE8lSXqLm4yphVhWEf',
+                    'callback': mobileCallback,
+                    'size': "invisible"
                 });
+            }
+            grecaptcha.reset(mobileWidget);
+            grecaptcha.execute(mobileWidget);
+        }
 
-                // validating if the customer selected an option from drop down and removing red border after selection
-                formState.change(function () {
+        // adding error styling and preventing form from submitting if invalid
+        if (!validate(formInputFields)) {
+
+            formInputFields.each(function () {
+
+                // on keyup and input field is no longer empty remove error class
+                $(this).keyup(function () {
 
                     if ($(this).val() !== '') {
-                        $(this).parent('.form__select-custom').removeClass('error');
+                        $(this).removeClass('error');
                     }
-
                 });
-
-                return;
-            }
-             
-            $.ajax({
-                url: "/contact-form-post2.php",
-                type: "POST",
-                dataType: "TEXT",
-                data: { formInfo: formInfo },
-                success: function(data) {
-                    console.log('success');
-
-                    $('.js-form__submit').html('Sent <span class="lnr lnr-checkmark-circle"></span>').addClass('success');
-                },
-                error: function(data) {
-                    console.log('fail');
-                }
             });
-        });
+
+            // validating if the customer selected an option from drop down and removing red border after selection
+            formState.change(function () {
+
+                if ($(this).val() !== '') {
+                    $(this).parent('.form__select-custom').removeClass('error');
+                }
+
+            });
+
+            return;
+        }
     }
 
-    formSubmit();
+    // contact form submit
+    function formSubmit(formSelector) {
+    
+        var form = $(formSelector);
+        var formFirstName = form.find('[name="firstName"]');
+        var formLastName = form.find('[name="lastName"]');
+        var formCity = form.find('[name="city"]');
+        var formState = form.find('[name="state"]');
+        var formZip = form.find('[name="zip"]');
+        var formPhone = form.find('[name="phone"]');
+        var formEmail = form.find('[name="email"]');
 
+        var formInfo = {
+            "firstName": formFirstName.val().toUpperCase(),
+            "lastName": formLastName.val().toUpperCase(),
+            "city": formCity.val().toUpperCase(),
+            "state": formState.val() === null ? '' : formState.val().toUpperCase(),
+            "zip": formZip.val(),
+            "phone": formPhone.val(),
+            "email": formEmail.val().toUpperCase()
+        };
+            
+        $.ajax({
+            url: "/contact-form-post2.php",
+            type: "POST",
+            dataType: "TEXT",
+            data: { formInfo: formInfo },
+            success: function(data) {
+                console.log('success');
+
+                $('.js-form__submit').html('Sent <span class="lnr lnr-checkmark-circle"></span>').addClass('success');
+            },
+            error: function(data) {
+                console.log('fail');
+            }
+        });
+       
+    }
+
+    // window.renderCaptcha = function () {
+    
+    //     grecaptcha.render('desktop-captcha', { 'sitekey': '6LeJKDQUAAAAAMnyo48vqCJE8lSXqLm4yphVhWEf' });
+    //     grecaptcha.render('mobile-captcha', { 'sitekey': '6LeJKDQUAAAAAMnyo48vqCJE8lSXqLm4yphVhWEf' });
+
+    // };
+
+    // window.desktopCallback = function() {
+    //     console.log('recaptcha valid');
+    //     formSubmit( '.form--contact-desktop' );
+    // };
+
+    // window.mobileCallback = function() {
+    //     console.log('recaptcha valid');
+    //     formSubmit('.form--contact-mobile');
+    // };
+
+    window.desktopCallback = function(token) {
+        console.log('recaptcha valid');
+        formSubmit('.form--contact-desktop');
+    };
+
+    window.mobileCallback = function(token) {
+        console.log('recaptcha valid');
+        formSubmit('.form--contact-mobile');
+    };
+
+    $('.form--contact-desktop').on('submit', function(event) {
+        event.preventDefault(); 
+        //validateForm(0);
+        validateForm('.form--contact-desktop');
+    });
+    $( '.form--contact-mobile' ).on('submit', function(event) {
+        event.preventDefault(); 
+        //validateForm(1);
+        validateForm('.form--contact-mobile');
+    });
 
 });

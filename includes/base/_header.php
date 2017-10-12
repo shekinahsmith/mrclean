@@ -63,7 +63,9 @@
 	<? include 'includes/base/_header-css.php'; ?>
 	
 	<script src="https://code.jquery.com/jquery-1.11.2.min.js" integrity="sha256-Ls0pXSlb7AYs7evhd+VLnWsZ/AqEHcXBeMZUycz/CcA=" crossorigin="anonymous"></script>
-	<script src="https://www.google.com/recaptcha/api.js"></script>
+
+	<script src="https://www.google.com/recaptcha/api.js" async defer ></script>
+	<!-- <script src="https://www.google.com/recaptcha/api.js?onload=renderCaptcha&render=explicit" async defer></script> -->
 
 	<!-- HTML5 MODERNIZER -->
 	<script src="assets/js/plugins/modernizr.js"></script>

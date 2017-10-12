@@ -1,4 +1,4 @@
-<form class="form form--contact js-form--contact" id="form--contact" method="post">
+<form class="form form--contact js-form--contact <?= $formClass; ?>" id="<?= $formID; ?>" method="post">
 
     <input type="text" id="first-name" name="firstName" placeholder="First Name" required>
     <input type="text" id="last-name" name="lastName" placeholder="Last Name" required>
@@ -65,7 +65,7 @@
 
     <input type="email" id="email" name="email" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" placeholder="Email" required>
 
-    <button class="form__submit js-form__submit" id="submit">Send</button>
+    <button class="g-recaptcha form__submit js-form__submit" data-sitekey="6LeJKDQUAAAAAMnyo48vqCJE8lSXqLm4yphVhWEf" id="<?= $recaptchaID; ?>" data-callback="<?= $formCallback; ?>">Send</button>
 
 
     <div class="form__legal legal">By filling out the form you are acknowleging you would like to be contacted by a Mr. Clean Mainance Company represenative with the intent of service or inqury.</div>

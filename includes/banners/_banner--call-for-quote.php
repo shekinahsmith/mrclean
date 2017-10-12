@@ -8,7 +8,13 @@
         <div class="banner__contact-headline">Contact us for a quote</div>
         <div class="banner__contact-cta">Fill out the form and a Mr. Clean Mainance Company represenative, will contact you at the phone number and email below to confirm.</div>
                 
-        <? include 'includes/_form-contact.php'; ?>
+        <? 
+            $formID = 'mobile-form';
+            $recaptchaID = 'mobile-captcha';
+            $formCallback = 'mobileCallback';
+            $formClass = 'form--contact-mobile';
+            include 'includes/_form-contact.php'; 
+        ?>
 
     </div>
 </div><!-- /.banner--call-for-quote -->
