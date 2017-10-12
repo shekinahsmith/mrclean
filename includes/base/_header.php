@@ -68,55 +68,6 @@
 	<!-- HTML5 MODERNIZER -->
 	<script src="assets/js/plugins/modernizr.js"></script>
 
-
-	<script>
-		function onSubmit(token) {
-			console.log('submit')
-		}
-
-		function validate(event) {
-
-			var form = $('.js-form--contact');
-            var formInputFields = form.find('[required]');
-
-			// form validation
-            function validateFields(fields) {
-
-                var valid = true;
-
-                fields.each(function() {
-
-                    var fields = $(this);
-
-                    if( fields.val() == '' && !fields.is('select') ) {
-
-                        fields.addClass('error');
-                        valid = false;
-
-                    }
-                    else if( fields.val() == '' && fields.is('select') ) {
-						
-						$('.form__select-custom').addClass('error');
-						valid = false;
-                    }
-
-                });
-
-                grecaptcha.execute();
-
-			}
-			
-			validateFields(formInputFields);
-
-		}
-
-		function onload() {
-			var element = document.getElementById('submit');
-    		element.onclick = validate;
-		}
-	</script>
-
-
 </head>
 
 <body class="<? echo $bodyClass .' '. $fixedNav; ?>">
