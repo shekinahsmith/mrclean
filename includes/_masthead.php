@@ -1,9 +1,9 @@
 <nav class="masthead" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
     <div class="row">
         <div class="columns small-6  large-2">
-            <div class="masthead__logo show-for-large-up"><img src="/assets/images/logo-color.png" alt="Mr. Clean Maintainence Company, LLC"></div>
+            <div class="masthead__logo show-for-large-up"><a href="/"><img src="/assets/images/logo-color.png" alt="Mr. Clean Maintainence Company, LLC"></a></div>
 
-            <div class="masthead__logo show-for-medium-down"><img src="/assets/images/logo-full-color.png" alt="Mr. Clean Maintainence Company, LLC"></div>
+            <div class="masthead__logo show-for-medium-down"><a href="/"><img src="/assets/images/logo-full-color.png" alt="Mr. Clean Maintainence Company, LLC"></a></div>
         </div><!-- /.columns -->
 
         <div class="columns large-6 show-for-large-up">
@@ -33,7 +33,7 @@
         <li class="masthead__mobile-navigation-item"><a href="/">Home</a></li>
         <li class="masthead__mobile-navigation-item"><a href="/about-us.html">About Us</a></li>
         <li class="masthead__mobile-navigation-item"><a href="/clients.html">Our clients</a></li>
-        <li class="masthead__navigation-item"><a href="/faq.html">FAQ</a></li>
+        <li class="masthead__mobile-navigation-item"><a href="/faq.html">FAQ</a></li>
         <li class="masthead__mobile-navigation-item"><a href="/contact-us.html">Contact us</a></li>
         <li class="masthead__mobile-navigation-item masthead__login"><a href="">Employee Login</a></li>
 

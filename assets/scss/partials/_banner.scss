@@ -1,0 +1,77 @@
+.banner {
+    background-color: $color-daisy-bush;
+    padding: 10px 0;
+    text-align: center;
+
+    // banner text
+    &__text {
+        font-size: rem-calc(15);
+
+        .lnr {
+            font-size: rem-calc(12);
+            font-weight: bold;
+        }
+    }
+
+    // banner contact form
+    &__contact {
+        
+        &-wrapper {
+            background-color: $color-daisy-bush;
+            left: 0;
+            padding: 40px 15px 0;
+            position: absolute;
+            transition: all 0.45s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+            top: -9999px;
+            width: 100%;
+            z-index: 9;
+
+            &.is-visible {
+                top: 0;
+            }
+
+        }// .banner__contact-wrapper 
+
+        // close contact dowpdown
+        &-close {
+            font-size: rem-calc(16px);
+            font-weight: bold;
+            position: absolute;
+            right: 20px;
+            top: 5px;
+            z-index: 90;
+        }// .banner__contact-close
+
+        &-headline {
+            font-size: rem-calc(18);
+            margin-bottom: 20px;
+        }
+
+        &-cta {
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+    }
+}// .banner
+
+// banner call for quote
+.banner--call-for-quote {
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    // banner text
+    .banner__text {
+
+        .lnr-chevron-right {
+            display: inline-block;
+
+            &:last-child {
+                margin-left: -5px;
+            }
+        }
+    }// .banner__text
+
+}// .banner--call-for-quote

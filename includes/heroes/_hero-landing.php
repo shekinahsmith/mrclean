@@ -1,4 +1,6 @@
 <div class="hero hero--landing">
+    <? include 'includes/banners/_banner--call-for-quote.php'; ?>
+    
     <div class="row" data-equalizer>
         <div class="columns small-12 large-6 has-border-right" data-equalizer-watch>
 

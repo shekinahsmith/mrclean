@@ -1,10 +1,10 @@
-<form class="form form--contact js-form--contact">
+<form class="form form--contact js-form--contact" id="form--contact" method="post">
 
     <input type="text" id="first-name" name="firstName" placeholder="First Name" required>
     <input type="text" id="last-name" name="lastName" placeholder="Last Name" required>
     <input type="text" id="city" name="city" placeholder="City" required>
 
-    <select>
+    <select class="form__select-custom" name="state">
         <option value="" disabled selected>State</option>
         <option value="AL">Alabama</option>
         <option value="AK">Alaska</option>
@@ -59,16 +59,14 @@
         <option value="WY">Wyoming</option>
     </select>
 
-    <input type="text" id="zip" name="zip" pattern="d{5}-?(\d{4})" placeholder="Zip" required>
+    <input type="text" id="zip" name="zip" pattern="(^\d{5}$)|(^\d{5}-\d{4}$)" maxlength="5" placeholder="Zip" required>
 
     <input type="tel" id="phone" name="phone" pattern="(\+0?1\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}" placeholder="Phone Number (required)" required>
 
-    <input type="email" id="email" name="email" pattern="[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}
-  [a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*" placeholder="Email" required>
-    
-    <div class="form__submit">
-        <button class="form__submit" type="button">Send</button>
-    </div>
+    <input type="email" id="email" name="email" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" placeholder="Email" required>
+
+    <button class="form__submit js-form__submit" id="submit">Send</button>
+
 
     <div class="form__legal legal">By filling out the form you are acknowleging you would like to be contacted by a Mr. Clean Mainance Company represenative with the intent of service or inqury.</div>
 </form>

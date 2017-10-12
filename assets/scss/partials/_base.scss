@@ -26,10 +26,21 @@ body {
 	margin: 0 auto;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+	padding-top: $body-padding-mobile;
 	position: relative;
+
+	// large desktop
+	@media #{$large-up} {
+		padding-top: $body-padding-desktop;
+	}
+	
 	// xlarge desktop
 	@media #{$xlarge-up} {
 		font-size: 14px;
+	}
+
+	&.prevent-scroll {
+		overflow: hidden;
 	}
 	
 } // body

@@ -5,9 +5,10 @@
     background-size: cover;
     background-position: center;
     color: $color-white; 
-    padding: 75px 15px 49px;
+    padding: 95px 15px 49px;
     position: relative;
     text-align: center;
+    z-index: 1;
 
     @media #{$large-up} {
         padding: 66px 0;
@@ -49,7 +50,7 @@
     // hero contact wrapper
     &__contact-wrapper {
         margin: 0 auto;
-        width: 65%;
+        width: 82%;
     }
 
     // hero contact healdine

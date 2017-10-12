@@ -7253,10 +7253,16 @@ body {
   margin: 0 auto;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  padding-top: 70px;
   position: relative; }
+  @media only screen and (min-width: 1024px) {
+    body {
+      padding-top: 99px; } }
   @media only screen and (min-width: 1280px) {
     body {
       font-size: 14px; } }
+  body.prevent-scroll {
+    overflow: hidden; }
 
 img {
   max-width: 100%; }
@@ -7335,11 +7341,18 @@ sup {
 
 .masthead {
   background-color: #fff;
+  -webkit-box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.24);
+  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.24);
   height: 70px;
-  padding: 12px 0; }
+  left: 0;
+  padding: 12px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 99; }
   @media only screen and (min-width: 1024px) {
     .masthead {
-      height: auto; } }
+      height: 99px; } }
   .masthead__logo {
     height: auto;
     width: auto; }
@@ -7371,6 +7384,9 @@ sup {
       display: inline-block;
       font-weight: 700;
       vertical-align: middle; }
+    .masthead__mobile-menu-toggle .close-icon {
+      color: #696969;
+      font-size: 1.125rem; }
   .masthead__mobile-navigation {
     display: block;
     background-color: #fff;
@@ -7378,6 +7394,8 @@ sup {
     left: -9999px;
     padding: 0 20px;
     position: fixed;
+    -webkit-transition: all 0.45s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition: all 0.45s cubic-bezier(0.445, 0.05, 0.55, 0.95);
     top: 70px;
     width: 100vw;
     z-index: 9999; }
@@ -7385,17 +7403,70 @@ sup {
       left: 0; }
     .masthead__mobile-navigation-item {
       border-bottom: 1px solid #F2F2F2;
-      font-size: 13px;
-      padding: 29px 0 15px; }
+      font-size: 0.8125rem; }
+      .masthead__mobile-navigation-item a {
+        display: inline-block;
+        height: 100%;
+        padding: 29px 0 15px;
+        width: 100%; }
+      .masthead__mobile-navigation-item:first-child {
+        border-top: 1px solid #F2F2F2; }
+
+.banner {
+  background-color: #5B2999;
+  padding: 10px 0;
+  text-align: center; }
+  .banner__text {
+    font-size: 0.9375rem; }
+    .banner__text .lnr {
+      font-size: 0.75rem;
+      font-weight: bold; }
+  .banner__contact-wrapper {
+    background-color: #5B2999;
+    left: 0;
+    padding: 40px 15px 0;
+    position: absolute;
+    -webkit-transition: all 0.45s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition: all 0.45s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    top: -9999px;
+    width: 100%;
+    z-index: 9; }
+    .banner__contact-wrapper.is-visible {
+      top: 0; }
+  .banner__contact-close {
+    font-size: 1rem;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    z-index: 90; }
+  .banner__contact-headline {
+    font-size: 1.125rem;
+    margin-bottom: 20px; }
+  .banner__contact-cta {
+    line-height: 1.1;
+    margin-bottom: 25px; }
+
+.banner--call-for-quote {
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+  .banner--call-for-quote .banner__text .lnr-chevron-right {
+    display: inline-block; }
+    .banner--call-for-quote .banner__text .lnr-chevron-right:last-child {
+      margin-left: -5px; }
 
 .hero {
   background-color: #5B2999;
   background-size: cover;
   background-position: center;
   color: #fff;
-  padding: 75px 15px 49px;
+  padding: 95px 15px 49px;
   position: relative;
-  text-align: center; }
+  text-align: center;
+  z-index: 1; }
   @media only screen and (min-width: 1024px) {
     .hero {
       padding: 66px 0;
@@ -7425,7 +7496,7 @@ sup {
         width: 90%; } }
   .hero__contact-wrapper {
     margin: 0 auto;
-    width: 65%; }
+    width: 82%; }
   .hero__contact-headline {
     font-size: 1.125rem;
     font-weight: 500;
@@ -7490,21 +7561,34 @@ sup {
   height: 27px;
   padding: 0; }
 
-.form button {
+.form__submit {
   background-color: #7890FE;
   padding: 12px 5px;
   width: 50%; }
+  .form__submit.success {
+    background-color: #7ed321;
+    color: #fff; }
+    .form__submit.success span {
+      display: inline-block;
+      margin-left: 5px;
+      vertical-align: text-bottom; }
 
 .form--contact input,
 .form--contact select {
   display: inline-block; }
 
-.form--contact input[name='firstName'],
-.form--contact input[name='lastName'],
 .form--contact input[name='city'],
 .form--contact input[name='phone'],
 .form--contact input[name='email'] {
-  width: 48%; }
+  width: 49%; }
+
+.form--contact input[name='firstName'],
+.form--contact input[name='lastName'] {
+  width: 100%; }
+  @media only screen and (min-width: 1024px) {
+    .form--contact input[name='firstName'],
+    .form--contact input[name='lastName'] {
+      width: 49%; } }
 
 .form--contact select {
   width: 20%; }

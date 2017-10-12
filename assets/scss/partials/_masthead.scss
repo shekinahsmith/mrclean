@@ -1,12 +1,17 @@
 // Masthead
 .masthead {
-    $mastheadHeight: 70px;
     background-color: $color-white;
-    height: $mastheadHeight;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.24);
+    height: $body-padding-mobile;
+    left: 0;
     padding: 12px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
 
     @media #{$large-up} {
-        height: auto;
+        height: $body-padding-desktop;
     }
 
     &__logo {
@@ -17,7 +22,6 @@
             height: 75px;
             width: 75px;
         }
-
     }
 
     // masthead navigation
@@ -56,6 +60,11 @@
             font-weight: 700;
             vertical-align: middle;
         }
+
+        .close-icon {
+            color: $color-dove-gray;
+            font-size: rem-calc(18);
+        }
     }
 
 
@@ -67,7 +76,8 @@
         left: -9999px;
         padding: 0 20px;
         position: fixed;
-        top: $mastheadHeight;
+        transition: all 0.45s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        top: $body-padding-mobile;
         width: 100vw;
         z-index: 9999;
 
@@ -77,8 +87,20 @@
         
         &-item {
             border-bottom: 1px solid $color-concrete;
-            font-size: 13px;
-            padding: 29px 0 15px;
+            font-size: rem-calc(13);
+            
+            a {
+                display: inline-block;
+                height: 100%;
+                padding: 29px 0 15px;
+                width: 100%;
+            }
+
+            &:first-child {
+                border-top: 1px solid $color-concrete;
+            }
         }
+
+
     }
 }// .masthead

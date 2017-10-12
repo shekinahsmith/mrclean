@@ -14,10 +14,21 @@
         padding: 0;
     }
 
-    button {
+    &__submit {
         background-color: $color-malibu;
         padding: 12px 5px;
         width: 50%;
+
+        &.success {
+            background-color: $color-lima;
+            color: $color-white;
+
+            span {
+                display: inline-block;
+                margin-left: 5px;
+                vertical-align: text-bottom;
+            }
+        }
     }
 }// .form
 
@@ -28,12 +39,19 @@
         display: inline-block;
     }
 
-    input[name='firstName'],
-    input[name='lastName'],
     input[name='city'],
     input[name='phone'],
     input[name='email'] {
-        width: 48%;
+        width: 49%;
+    }
+
+    input[name='firstName'],
+    input[name='lastName'] {
+        width: 100%;
+
+        @media #{$large-up} {
+            width: 49%;
+        }
     }
 
     select {
