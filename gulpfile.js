@@ -25,7 +25,7 @@ gulp.task('sass', function () {
                 gutil.beep();
             }
         }))
-        .pipe(sass()) 
+        .pipe(sass({ outputStyle: 'compressed' })) 
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false

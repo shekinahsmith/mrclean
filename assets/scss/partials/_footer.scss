@@ -27,7 +27,7 @@
             @media #{$large-up} {
                 display: inline-block;
                 padding: 0;
-                width: 24%;
+                width: 19%;
             }
         }
     }
@@ -38,6 +38,12 @@
 
         @media #{$large-up} {
             margin-top: 0;
+        }
+
+        &-image {
+            display: inline-block;
+            margin-left: 10px;
+            vertical-align: middle;
         }
     }
 }

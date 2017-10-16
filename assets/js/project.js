@@ -9,14 +9,37 @@
 
 //=include "plugins/slick.min.js"
 
+// to top right away
+if (window.location.hash) scroll(0, 0);
+// void some browsers issue
+setTimeout(function () { scroll(0, 0); }, 1);
 
-$(document).ready(function() {
+
+$(document).ready(function () {
     $(document).foundation();
 
-    // open and closing mobile navigation
-    $('.js-masthead__mobile-menu-toggle').on('click', function() {
 
-        if( !$('body.prevent-scroll').length ) {
+    // *only* if we have anchor on the url
+    if (window.location.hash) {
+
+        // smooth scroll to the anchor id
+        $('html, body').animate({
+            scrollTop: $(window.location.hash).closest('.section').offset().top - 100
+        }, 1000, 'swing');
+
+        if (window.location.pathname == '/clients.html') {
+
+            setTimeout(function () {
+                $('.slider-item' + window.location.hash).click();
+            }, 500);
+
+        }
+    }
+
+    // open and closing mobile navigation
+    $('.js-masthead__mobile-menu-toggle').on('click', function () {
+
+        if (!$('body.prevent-scroll').length) {
             $('body').addClass('prevent-scroll');
             $('.js-masthead__mobile-navigation').addClass('is-visible');
 
@@ -30,7 +53,7 @@ $(document).ready(function() {
         }
     });
 
-    $('.js-banner--call-for-quote').on('click', function() {
+    $('.js-banner--call-for-quote').on('click', function () {
 
         var heroHeight = $('body').outerHeight();
         $('body').addClass('prevent-scroll');
@@ -38,12 +61,12 @@ $(document).ready(function() {
 
     });
 
-    $('.js-banner__contact-close').on('click', function() {
+    $('.js-banner__contact-close').on('click', function () {
         $('body').removeClass('prevent-scroll');
         $('.js-banner-contact-form').removeClass('is-visible');
     });
 
-    $('.js-section__image-carousel').slick({
+    $('.js-slider--image-carousel').slick({
         arrows: false,
         dots: true,
         slidesToShow: 1,
@@ -65,7 +88,7 @@ $(document).ready(function() {
         ]
     });
 
-    $('.js-section__navigation-slider').slick({
+    $('.js-slider__navigation').slick({
         arrows: false,
         dots: true,
         slidesToShow: 4,
@@ -123,11 +146,35 @@ $(document).ready(function() {
         ]
     });
 
+    // submit function for desktop
+    $('.form--contact-desktop').submit(function (event) {
+        event.preventDefault();
+        validateForm('.form--contact-desktop');
+    });
+
+    // submit fucntion for mobile
+    $('.form--contact-mobile').submit(function (event) {
+        event.preventDefault();
+        validateForm('.form--contact-mobile');
+    });
+
+    // call back for desktop
+    var desktopCallback = function (token) {
+        console.log('recaptcha valid');
+        formSubmit('.form--contact-desktop');
+    };
+
+    // call back for mobile
+    window.mobileCallback = function (token) {
+        console.log('recaptcha valid');
+        formSubmit('.form--contact-mobile');
+    };
+
     function validateForm(formSelector) {
         // var form = $('.js-form--contact');
 
         var form = $(formSelector);
-        var formInputFields = form.find('[required]');
+        var formInputFields = form.find('[required="true"]');
         var formState = form.find('[name="state"]');
 
         var desktopCall = 0;
@@ -160,18 +207,15 @@ $(document).ready(function() {
 
         validate(formInputFields);
 
-        // if( validate(formInputFields) ) {
-        //     recaptcha.execute(formIndex); 
-        // }
-        
-        if ( formSelector == '.form--contact-desktop' && validate(formInputFields)) {
-            desktopCall ++;
+
+        if (formSelector == '.form--contact-desktop' && validate(formInputFields)) {
+            desktopCall++;
         }
         else if (formSelector == '.form--contact-mobile' && validate(formInputFields)) {
-            mobileCall ++;
+            mobileCall++;
         }
 
-        if( formSelector == '.form--contact-desktop' ) {
+        if (formSelector == '.form--contact-desktop') {
             var desktopWidget;
 
             if (desktopCall == 1) {
@@ -228,7 +272,7 @@ $(document).ready(function() {
 
     // contact form submit
     function formSubmit(formSelector) {
-    
+
         var form = $(formSelector);
         var formFirstName = form.find('[name="firstName"]');
         var formLastName = form.find('[name="lastName"]');
@@ -247,60 +291,54 @@ $(document).ready(function() {
             "phone": formPhone.val(),
             "email": formEmail.val().toUpperCase()
         };
-            
+
         $.ajax({
             url: "/contact-form-post2.php",
             type: "POST",
             dataType: "TEXT",
             data: { formInfo: formInfo },
-            success: function(data) {
+            success: function (data) {
                 console.log('success');
 
                 $('.js-form__submit').html('Sent <span class="lnr lnr-checkmark-circle"></span>').addClass('success');
             },
-            error: function(data) {
+            error: function (data) {
                 console.log('fail');
             }
         });
-       
+
     }
 
-    // window.renderCaptcha = function () {
-    
-    //     grecaptcha.render('desktop-captcha', { 'sitekey': '6LeJKDQUAAAAAMnyo48vqCJE8lSXqLm4yphVhWEf' });
-    //     grecaptcha.render('mobile-captcha', { 'sitekey': '6LeJKDQUAAAAAMnyo48vqCJE8lSXqLm4yphVhWEf' });
 
-    // };
+    function equalHeights() {
 
-    // window.desktopCallback = function() {
-    //     console.log('recaptcha valid');
-    //     formSubmit( '.form--contact-desktop' );
-    // };
+        var controlHeight;
+        var heights;
 
-    // window.mobileCallback = function() {
-    //     console.log('recaptcha valid');
-    //     formSubmit('.form--contact-mobile');
-    // };
+        $('[data-equal-heights]').each(function () {
 
-    window.desktopCallback = function(token) {
-        console.log('recaptcha valid');
-        formSubmit('.form--contact-desktop');
-    };
+            // getting all of the containers with the data-attr and finding the largest height
+            heights = $(this).find($('[data-equal-heights-watch]')).map(function () {
 
-    window.mobileCallback = function(token) {
-        console.log('recaptcha valid');
-        formSubmit('.form--contact-mobile');
-    };
+                return $(this).height();
 
-    $('.form--contact-desktop').on('submit', function(event) {
-        event.preventDefault(); 
-        //validateForm(0);
-        validateForm('.form--contact-desktop');
-    });
-    $( '.form--contact-mobile' ).on('submit', function(event) {
-        event.preventDefault(); 
-        //validateForm(1);
-        validateForm('.form--contact-mobile');
+            }).get(),
+
+                controlHeight = Math.max.apply(null, heights);
+
+            // setting the height of the all of the elements with the data-attr to largest height
+            $(this).find($('[data-equal-heights-watch]')).outerHeight(controlHeight);
+        });
+    }
+    equalHeights();
+
+
+    $(window).resize(function () {
+
+        // clearing the inline style added above to allow height to resize on smaller/larger screens
+        $('[data-equal-heights-watch]').css('height', 'auto');
+        equalHeights();
+
     });
 
 });

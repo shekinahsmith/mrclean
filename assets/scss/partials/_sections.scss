@@ -36,26 +36,6 @@
         }
     }// .section__image-caption
 
-    &__image-carousel {
-        width: 100%;
-
-        &-slide {
-            margin-bottom: 0;
-
-            @media #{$large-up} {
-                margin-bottom: 28px;
-            }
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-
-            img {
-                width: 100%;
-            }
-        }
-    }// .section__image-carousel 
-
 }// .section
 
 .section--dark {
@@ -90,29 +70,6 @@
     // section navigation
     .section__navigation {
         margin-top: 55px;
-
-        &-slide {
-
-            a {
-                display: inline-block;
-                height: 100%;
-                padding-bottom: 30px;
-                position: relative;
-                width: 100%;
-            }
-
-            .slide-image {
-                margin: 0 auto;
-                width: 150px;
-            }
-
-            .slide-header {
-                bottom: 0;
-                left: 0;
-                position: absolute;
-                width: 100%;
-            }
-        }
     }// .section__navigation
 
 }// .section--clients-we-serve
@@ -132,6 +89,14 @@
 
 }// .section--why-choose-us
 
+//  our story
+.section--our-story {
+
+    .section__subheadline {
+        font-weight: 500;
+    }
+}
+
 
 // client list
 .section--client-list {
@@ -140,7 +105,7 @@
     .section__headline {
         color: $color-white;
         font-size: 28px;
-        font-weight: 300;
+        font-weight: 500;
         margin-bottom: 60px;
         text-align: center;
 
@@ -161,6 +126,7 @@
     border-bottom: 1px solid $color-concrete;
 }
 
+// faq section
 .section--faq {
 
     .section__headline {
@@ -193,4 +159,4 @@
             }
         }
     }
-}
+}// .sectoin--faq

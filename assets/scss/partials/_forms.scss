@@ -19,6 +19,11 @@
         padding: 12px 5px;
         width: 50%;
 
+        &:hover,
+        &:focus {
+            background-color: $color-malibu;
+        }
+
         &.success {
             background-color: $color-lima;
             color: $color-white;
@@ -55,7 +60,13 @@
     }
 
     select {
+        padding-left: 10px;
         width: 20%;
+    }
+
+    option[disabled=disabled] {
+        color: #aaa;
+        -webkit-appearance:none; 
     }
 
     input[name='zip'] {

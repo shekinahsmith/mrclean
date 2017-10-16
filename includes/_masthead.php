@@ -10,11 +10,11 @@
 
             <ul class="masthead__navigation show-for-large-up">
 
-                <li class="masthead__navigation-item"><a href="/">Home</a></li>
-                <li class="masthead__navigation-item"><a href="/about-us.html">About Us</a></li>
-                <li class="masthead__navigation-item"><a href="/clients.html">Our clients</a></li>
-                <li class="masthead__navigation-item"><a href="/faq.html">FAQ</a></li>
-                <li class="masthead__navigation-item"><a href="/contact-us.html">Contact us</a></li>
+                <li class="masthead__navigation-item" itemprop="url"><a href="/" itemprop="name">Home</a></li>
+                <li class="masthead__navigation-item" itemprop="url"><a href="/about-us.html" itemprop="name">About Us</a></li>
+                <li class="masthead__navigation-item" itemprop="url"><a href="/clients.html" itemprop="name">Our clients</a></li>
+                <li class="masthead__navigation-item" itemprop="url"><a href="/faq.html" itemprop="name">FAQ</a></li>
+                <li class="masthead__navigation-item" itemprop="url"><a href="/contact-us.html" itemprop="name">Contact us</a></li>
 
             </ul>
 
@@ -30,12 +30,12 @@
 
     <ul class="masthead__mobile-navigation js-masthead__mobile-navigation">
 
-        <li class="masthead__mobile-navigation-item"><a href="/">Home</a></li>
-        <li class="masthead__mobile-navigation-item"><a href="/about-us.html">About Us</a></li>
-        <li class="masthead__mobile-navigation-item"><a href="/clients.html">Our clients</a></li>
-        <li class="masthead__mobile-navigation-item"><a href="/faq.html">FAQ</a></li>
-        <li class="masthead__mobile-navigation-item"><a href="/contact-us.html">Contact us</a></li>
-        <li class="masthead__mobile-navigation-item masthead__login"><a href="">Employee Login</a></li>
+        <li class="masthead__mobile-navigation-item" itemprop="url"><a href="/" itemprop="name">Home</a></li>
+        <li class="masthead__mobile-navigation-item" itemprop="url"><a href="/about-us.html" itemprop="name">About Us</a></li>
+        <li class="masthead__mobile-navigation-item" itemprop="url"><a href="/clients.html" itemprop="name">Our clients</a></li>
+        <li class="masthead__mobile-navigation-item" itemprop="url"><a href="/faq.html" itemprop="name">FAQ</a></li>
+        <li class="masthead__mobile-navigation-item" itemprop="url"><a href="/contact-us.html" itemprop="name">Contact us</a></li>
+        <li class="masthead__mobile-navigation-item masthead__login" itemprop="url"><a href="" itemprop="name">Employee Login</a></li>
 
     </ul>
 </nav>
