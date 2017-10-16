@@ -32,6 +32,7 @@
         &-item {
             display: inline-block;
             font-size: rem-calc(15);
+            padding: 4px 0;
             width: 19%;
             vertical-align: middle;
         }
@@ -51,8 +52,10 @@
     &__mobile-menu-toggle {
         font-size: rem-calc(13);
         padding: 12px 0;
+        position: relative;
         text-align: right;
         text-transform: uppercase;
+        z-index: 9999;
 
         span {
             color: $color-cerulean;

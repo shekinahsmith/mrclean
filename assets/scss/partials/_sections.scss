@@ -89,6 +89,28 @@
 
 }// .section--why-choose-us
 
+.section--why-use-commerical {
+
+    .section__image {
+        position: relative;
+        transform: none;
+        top: 0;
+
+        @media #{$large-up} {
+            max-width: 700px;
+            position: absolute;
+            right: 0;
+            transform: translateY(-50%);
+            top: 50%;
+            width: 500px;
+        }
+
+        @media #{$xlarge-up} {
+            width: 700px
+        }
+    }
+}
+
 //  our story
 .section--our-story {
 

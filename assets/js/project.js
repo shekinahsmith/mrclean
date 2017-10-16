@@ -39,14 +39,14 @@ $(document).ready(function () {
     // open and closing mobile navigation
     $('.js-masthead__mobile-menu-toggle').on('click', function () {
 
-        if (!$('body.prevent-scroll').length) {
-            $('body').addClass('prevent-scroll');
+        if (!$('html.prevent-scroll').length) {
+            $('html').addClass('prevent-scroll');
             $('.js-masthead__mobile-navigation').addClass('is-visible');
 
             $(this).html('<span class="lnr lnr-cross close-icon"></span>');
         }
         else {
-            $('body').removeClass('prevent-scroll');
+            $('html').removeClass('prevent-scroll');
             $('.js-masthead__mobile-navigation').removeClass('is-visible');
 
             $(this).html('Menu <span class="lnr lnr-chevron-right"></span>');
@@ -150,12 +150,35 @@ $(document).ready(function () {
     $('.form--contact-desktop').submit(function (event) {
         event.preventDefault();
         validateForm('.form--contact-desktop');
+        
+        if (window.desktopCall == 1) {
+            var desktopWidget = grecaptcha.render('desktop-captcha', {
+                'sitekey': '6LeJKDQUAAAAAMnyo48vqCJE8lSXqLm4yphVhWEf',
+                'callback': desktopCallback,
+                'size': "invisible"
+            });
+            
+            grecaptcha.reset(desktopWidget);
+            grecaptcha.execute(desktopWidget);
+        }
     });
 
     // submit fucntion for mobile
-    $('.form--contact-mobile').submit(function (event) {
+    $('.banner--call-for-quote .form--contact-mobile').submit(function (event) {
         event.preventDefault();
-        validateForm('.form--contact-mobile');
+        validateForm('.banner--call-for-quote .form--contact-mobile');
+        
+        if (window.mobileCall == 1 ){
+            var mobileWidget = grecaptcha.render('mobile-captcha', {
+                'sitekey': '6LeJKDQUAAAAAMnyo48vqCJE8lSXqLm4yphVhWEf',
+                'callback': mobileCallback,
+                'size': "invisible"
+            });
+                
+            grecaptcha.reset(mobileWidget);
+            grecaptcha.execute(mobileWidget);
+
+        }
     });
 
     // call back for desktop
@@ -171,7 +194,6 @@ $(document).ready(function () {
     };
 
     function validateForm(formSelector) {
-        // var form = $('.js-form--contact');
 
         var form = $(formSelector);
         var formInputFields = form.find('[required="true"]');
@@ -179,7 +201,7 @@ $(document).ready(function () {
 
         var desktopCall = 0;
         var mobileCall = 0;
-
+        
         // form validation
         function validate(fields) {
 
@@ -189,58 +211,15 @@ $(document).ready(function () {
 
                 var fields = $(this);
 
-                if (fields.val() == '' && !fields.is('select')) {
+                if (fields.val() == '' ) {
 
                     fields.addClass('error');
                     valid = false;
 
                 }
-                else if (fields.val() == '' && fields.is('select')) {
-
-                    $('.form__select-custom').addClass('error');
-                    valid = false;
-                }
 
             });
             return valid;
-        }
-
-        validate(formInputFields);
-
-
-        if (formSelector == '.form--contact-desktop' && validate(formInputFields)) {
-            desktopCall++;
-        }
-        else if (formSelector == '.form--contact-mobile' && validate(formInputFields)) {
-            mobileCall++;
-        }
-
-        if (formSelector == '.form--contact-desktop') {
-            var desktopWidget;
-
-            if (desktopCall == 1) {
-                desktopWidget = grecaptcha.render('desktop-captcha', {
-                    'sitekey': '6LeJKDQUAAAAAMnyo48vqCJE8lSXqLm4yphVhWEf',
-                    'callback': desktopCallback,
-                    'size': "invisible"
-                });
-            }
-            grecaptcha.reset(desktopWidget);
-            grecaptcha.execute(desktopWidget);
-        }
-
-        if (formSelector == '.form--contact-mobile') {
-            var mobileWidget;
-
-            if (mobileCall == 1) {
-                mobileWidget = grecaptcha.render('mobile-captcha', {
-                    'sitekey': '6LeJKDQUAAAAAMnyo48vqCJE8lSXqLm4yphVhWEf',
-                    'callback': mobileCallback,
-                    'size': "invisible"
-                });
-            }
-            grecaptcha.reset(mobileWidget);
-            grecaptcha.execute(mobileWidget);
         }
 
         // adding error styling and preventing form from submitting if invalid
@@ -268,6 +247,18 @@ $(document).ready(function () {
 
             return;
         }
+
+        validate(formInputFields);
+
+        if (formSelector == '.form--contact-desktop' && validate(formInputFields)) {
+            desktopCall++;
+            window.desktopCall = desktopCall;
+        }
+        else if (formSelector == '.banner--call-for-quote .form--contact-mobile' && validate(formInputFields)) {
+            mobileCall++;
+            window.mobileCall = mobileCall;
+        }
+
     }
 
     // contact form submit

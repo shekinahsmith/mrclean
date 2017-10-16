@@ -10,6 +10,12 @@
 	@include box-sizing(border-box);
 }
 
+html {
+	&.prevent-scroll {
+		overflow-x: hidden;
+	}
+}
+
 html,
 body {
 	height: 100%;

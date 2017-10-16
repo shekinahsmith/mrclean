@@ -46,7 +46,7 @@
                 $pageMetaDesc = "Mr. Clean Comprehensive Commercial Cleaning and Janitorial Services located in Charlotte, NC and serving Gastonia, Statesville, Mecklenburg County, Iredell County, Gaston County and Cabarrus County";
 			break;
 
-			case '/about.html':
+			case '/about-us.html':
 				$bodyClass = "page--about";
                 $pageTitle = "Mr. Clean, LLC | About Us";
                 $pageMetaDesc = "Mr. Clean Comprehensive Commercial Cleaning and Janitorial Services has been serving the Charlotte area for 14 years. We adhere to the highest standards in the industry and use eco-friendly products.";
@@ -59,9 +59,9 @@
 			break;
 
 			case '/faq.html':
-				$bodyClass = "page--clients";
-                $pageTitle = "Mr. Clean, LLC | Our Clients";
-                $pageMetaDesc = "Have questions about your commerical cleaning needs? We have the answers! Mr. Clean Commercial Cleaning Services is has the solution to your commerical cleaning needs.";
+				$bodyClass = "page--faq";
+                $pageTitle = "Mr. Clean, LLC | FAQ";
+                $pageMetaDesc = "Mr. Clean Commercial Cleaning Services has the answer to your commercial cleaning needs!";
 			break;
 
 			case '/contact-us.html':
@@ -85,12 +85,11 @@
 	<? include 'includes/base/_header-css.php'; ?>
 	
 	<script src="https://code.jquery.com/jquery-1.11.2.min.js" integrity="sha256-Ls0pXSlb7AYs7evhd+VLnWsZ/AqEHcXBeMZUycz/CcA=" crossorigin="anonymous"></script>
-
-	<script src="https://www.google.com/recaptcha/api.js" async defer ></script>
+	<script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
 
 	<!-- HTML5 MODERNIZER -->
 	<script src="assets/js/plugins/modernizr.js"></script>
 
 </head>
 
-<body class="<? echo $bodyClass .' '. $fixedNav; ?>">
+<body class="<?= $bodyClass; ?>">

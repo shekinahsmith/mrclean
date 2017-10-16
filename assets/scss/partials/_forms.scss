@@ -9,9 +9,24 @@
 
     input,
     select {
-        font-size: rem-calc(12);
+        font-size: 16px;
         height: 27px;
+        margin-bottom: 16px;
         padding: 0;
+
+        @media #{$large-up} {
+            font-size: rem-calc(12);
+        }
+
+        &.error {
+            border: 1px solid red;
+        }
+    }
+
+    &__label {
+        left: -9999px !important;
+        position: absolute !important;
+        top: -9999px !important;
     }
 
     &__submit {
