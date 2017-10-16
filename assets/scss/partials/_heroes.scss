@@ -138,4 +138,8 @@
     @media #{$large-up} {
         background-image: url('/assets/images/bg-hero-faq.jpg');
     }
+
+    .hero__headline {
+        text-align: center;
+    }
 }

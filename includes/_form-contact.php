@@ -68,5 +68,5 @@
     <button class="g-recaptcha form__submit js-form__submit" data-sitekey="6LeJKDQUAAAAAMnyo48vqCJE8lSXqLm4yphVhWEf" id="<?= $recaptchaID; ?>" data-callback="<?= $formCallback; ?>">Send</button>
 
 
-    <div class="form__legal legal">By filling out the form you are acknowleging you would like to be contacted by a Mr. Clean Mainance Company represenative with the intent of service or inqury.</div>
+    <div class="form__legal legal">By filling out the form you are acknowleging you would<br>like to be contacted by a Mr. Clean Mainance Company represenative with the intent of service or inqury.</div>
 </form>

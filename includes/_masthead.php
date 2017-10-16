@@ -21,7 +21,7 @@
         </div><!-- /.columns -->
 
         <div class="columns small-6 large-2">
-            <div class="masthead__login show-for-large-up">Employee Login</div>
+            <div class="masthead__login show-for-large-up"><a href="http://myapps.paychex.com/landing">Employee Login</a></div>
 
             <div class="masthead__mobile-menu-toggle js-masthead__mobile-menu-toggle show-for-medium-down">Menu <span class="lnr lnr-chevron-right"></span></div>
         </div><!-- /.columns -->
@@ -35,7 +35,7 @@
         <li class="masthead__mobile-navigation-item" itemprop="url"><a href="/clients.html" itemprop="name">Our clients</a></li>
         <li class="masthead__mobile-navigation-item" itemprop="url"><a href="/faq.html" itemprop="name">FAQ</a></li>
         <li class="masthead__mobile-navigation-item" itemprop="url"><a href="/contact-us.html" itemprop="name">Contact us</a></li>
-        <li class="masthead__mobile-navigation-item masthead__login" itemprop="url"><a href="" itemprop="name">Employee Login</a></li>
+        <li class="masthead__mobile-navigation-item masthead__login" itemprop="url"><a href="http://myapps.paychex.com/landing" itemprop="name">Employee Login</a></li>
 
     </ul>
 </nav>

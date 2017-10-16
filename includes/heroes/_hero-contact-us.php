@@ -13,8 +13,8 @@
 
             <div class="hero__contact-wrapper">
                 <div class="hero__contact-headline">Contact us for a quote</div>
-                <div class="hero__contact-cta">Fill out the form and a Mr. Clean Mainance Company represenative, will contact you at the phone number and email below to confirm.</div>
-                
+                <div class="hero__contact-cta">Fill out the form and a Mr. Clean Mainance Company represenative, will contact you at the<br>phone number and email below to confirm.</div>
+
                 <? include 'includes/_form-contact.php'; ?>
 
             </div><!-- /.hero__contact-wrapper -->

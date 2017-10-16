@@ -68,12 +68,14 @@ a {
 	#{$header} {
         color: inherit;
 		font-size: $font-size/1.7; 
-		font-weight: 500;
 		line-height: 1;
 		margin-bottom: 18px;
 
 		@if ($header == h3) {
 			font-weight: 400;
+		}
+		@else {
+			font-weight: 500;
 		}
 
 		@media #{$large-up} {

@@ -131,7 +131,6 @@
 
     .section__headline {
         font-size: $font-size-h2/1.7;
-        font-weight: 400;
         margin-bottom: 60px;
 
         @media #{$large-up} {
@@ -156,6 +155,10 @@
                 @media #{$large-up} {
                     margin-right: 4%;
                 }
+            }
+
+            &__question {
+                font-weight: 500;
             }
         }
     }
