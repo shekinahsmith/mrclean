@@ -27,12 +27,12 @@
   },
   "name" : "Mr. Clean, LLC",
   "telephone": "980-339-5399",
-  "faxNumber": "980-339-3753",
+  "faxNumber": "704-625-3753",
   "url" : "http://www.mrcleanco.com",
   "sameAs" : [ "https://www.facebook.com/MrCleanCo"] 
 }
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
+// Global site tag (gtag.js) - Google Analytics
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108050323-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

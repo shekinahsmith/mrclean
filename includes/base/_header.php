@@ -43,7 +43,7 @@
             case '/index.html':
 				$bodyClass = "page--home";
                 $pageTitle = "Mr. Clean, LLC | Comprehensive Commerical Cleaning and Janitorial Services";
-                $pageMetaDesc = "Mr. Clean Comprehensive Commercial Cleaning and Janitorial Services located in Charlotte, NC and serving Gastonia, Statesville, Mecklenburg County, Iredell County, Gaston County and Cabarrus County";
+                $pageMetaDesc = "Mr. Clean Comprehensive Commercial Cleaning and Janitorial Services serving Charlotte, NC, Gastonia, Statesville, Mecklenburg County, Iredell County, Gaston County and Cabarrus County.";
 			break;
 
 			case '/about-us.html':

@@ -89,24 +89,46 @@
 
 }// .section--why-choose-us
 
-.section--why-use-commerical {
+// making section image wider for these sections
+.section--why-use-commerical,
+.section--why-us {
 
     .section__image {
         position: relative;
         transform: none;
         top: 0;
+        width: 100%;
 
         @media #{$large-up} {
-            max-width: 700px;
             position: absolute;
             right: 0;
             transform: translateY(-50%);
             top: 50%;
             width: 500px;
         }
+    }
+}
+
+// why use commercial
+.section--why-use-commerical {
+
+    .section__image {
+        max-width: 700px;
 
         @media #{$xlarge-up} {
             width: 700px
+        }
+    }
+}
+
+// why us
+.section--why-us {
+    
+    .section__image {
+        max-width: 560px;
+
+        @media #{$xlarge-up} {
+            width: 560px
         }
     }
 }
